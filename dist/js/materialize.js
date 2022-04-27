@@ -8690,8 +8690,10 @@ $jscomp.polyfill = function (e, r, p, m) {
       key: "_updateElements",
       value: function _updateElements() {
         for (var elIndex in Pushpin._pushpins) {
-          var pInstance = Pushpin._pushpins[elIndex];
-          pInstance._updatePosition();
+          if(!isNaN(elIndex)){
+            var pInstance = Pushpin._pushpins[elIndex];
+            pInstance._updatePosition();
+          }
         }
       }
     }, {
